@@ -4,18 +4,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const shouldUseSourceMap = true;
+const shouldUseSourceMap = false;
 
 const isEnvDevelopment = process.env.NODE_ENV === 'development';
 const isEnvProduction = process.env.NODE_ENV === 'production';
 
-const resolvePath = _path => path.resolve(__dirname, _path);
+const resolvePath = (_path) => path.resolve(__dirname, _path);
 const paths = {
   entry: resolvePath('../example/index.tsx'),
   publicPath: '.',
   srcPath: resolvePath('../example'),
   outputPath: resolvePath('../docs'),
-  appHtml: resolvePath('../example/index.html')
+  appHtml: resolvePath('../example/index.html'),
 };
 
 const config = {
@@ -25,21 +25,21 @@ const config = {
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[hash:8].js',
     path: paths.outputPath,
-    publicPath: isEnvDevelopment ? '/' : './'
+    publicPath: isEnvDevelopment ? '/' : './',
   },
   resolve: {
-    extensions: ['.css', '.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.css', '.tsx', '.ts', '.js', '.jsx'],
   },
   devtool: shouldUseSourceMap ? 'source-map' : false,
   devServer: {
     port: '2333',
     quiet: true,
-    hot: true
+    hot: true,
   },
   externals: isEnvProduction
     ? {
         react: 'React',
-        'react-dom': 'ReactDOM'
+        'react-dom': 'ReactDOM',
       }
     : {},
   module: {
@@ -47,7 +47,7 @@ const config = {
       {
         test: /\.(js|jsx|ts|tsx)$/,
         loader: 'babel-loader',
-        include: paths.srcPath
+        include: paths.srcPath,
       },
       {
         test: /\.css$/,
@@ -62,28 +62,28 @@ const config = {
                 require('postcss-flexbugs-fixes'),
                 require('postcss-preset-env')({
                   autoprefixer: {
-                    flexbox: 'no-2009'
+                    flexbox: 'no-2009',
                   },
-                  stage: 3
+                  stage: 3,
                 }),
-                postcssNormalize()
-              ]
-            }
-          }
-        ]
-      }
-    ]
+                postcssNormalize(),
+              ],
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: paths.appHtml,
       templateParameters: {
-        isEnvProduction
-      }
+        isEnvProduction,
+      },
     }),
-    new ForkTsCheckerWebpackPlugin()
-  ]
+    new ForkTsCheckerWebpackPlugin(),
+  ],
 };
 
 module.exports = config;
