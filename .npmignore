@@ -1,0 +1,17 @@
+# .npmignore 
+
+.babelrc
+
+.gitignore
+
+tsconfig.json
+
+node_modules/*
+
+config/*
+
+build/* 
+
+example/*
+
+src/*

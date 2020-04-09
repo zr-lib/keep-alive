@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.list {
+  height: 500px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.item {
+  height: 300px;
+  line-height: 300px;
+  display: block;
+}
