@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import KeepAlive from 'keep-alive';
+import KeepAlive from 'keep-alive-comp';
 import List from './pages/list';
 import Detail from './pages/detail';
 import Detail2 from './pages/detail2';
