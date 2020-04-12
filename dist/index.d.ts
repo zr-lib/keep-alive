@@ -10,7 +10,7 @@ export interface KeepAliveAssist {
     scrollRestore?: () => number | null;
     stateRestore?: () => any;
     deleteCache?: () => void;
-    getKeepAlive?: (name?: string) => void;
+    getKeepAlive?: () => void;
 }
 declare const KeepAlive: React.FC<KeepAliveProps>;
 export default KeepAlive;

@@ -13,7 +13,7 @@ export interface KeepAliveAssist {
   scrollRestore?: () => number | null;
   stateRestore?: () => any;
   deleteCache?: () => void;
-  getKeepAlive?: (name?: string) => void;
+  getKeepAlive?: () => void;
 }
 
 interface CacheItem {

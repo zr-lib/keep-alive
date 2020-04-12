@@ -1,34 +1,41 @@
 # 组件 keep-alive
 
 ## 用法
+
 ```jsx
-<Router>
-  <Switch>
-    <Route
-      exact
-      path="/"
-      component={() => KeepAlive({ key: 'list', Component: List })}
-    />
-    <Route
-      exact
-      path="/detail/:id"
-      component={() => KeepAlive({ key: 'detail', Component: Detail })}
-    />
-    <Route exact path="/detail2/:id" component={Detail2} />
-  </Switch>
-</Router>
+<Route
+  exact
+  path="/"
+  component={() => (
+    <Suspense fallback={<div>loading...</div>}>
+      <KeepAlive name="list">{(props) => <List {...props} />}</KeepAlive>
+    </Suspense>
+  )}
+/>
+<Route
+  exact
+  path="/detail/:id"
+  component={() => (
+    <Suspense fallback={<div>loading...</div>}>
+      <Detail />
+    </Suspense>
+  )}
+/>
 ```
 
 ## 辅助函数
+
 ```jsx
 // 辅助函数
 export interface KeepAliveAssist {
   beforeRouteLeave?: (scrollTop: number, state: any) => void;
-  scrollRestore?: () => number;
+  scrollRestore?: () => number | null;
   stateRestore?: () => any;
-  deleteCache?: (key: string) => void;
+  deleteCache?: () => void;
+  getKeepAlive?: () => void;
 }
 ```
 
 ## 组件使用
+
 [list](./example/pages/list.tsx)

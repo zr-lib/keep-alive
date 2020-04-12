@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import loadable, { lazy } from '@loadable/component';
+import { lazy } from '@loadable/component';
 import KeepAlive from 'keep-alive-comp';
 
-const List = loadable(() => import('./pages/list'));
+const List = lazy(() => import('./pages/list'));
 const Detail = lazy(() => import('./pages/detail'));
 
 const Router: React.FC = ({ children }) => (
