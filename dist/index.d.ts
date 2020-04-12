@@ -1,15 +1,16 @@
-/// <reference types="react" />
+import React from 'react';
 export interface KeepAliveProps {
-    key: string;
-    Component: keyof JSX.IntrinsicElements | any;
+    name: string;
     store?: any;
     maxLength?: number;
+    children: (cacheProps: KeepAliveAssist) => React.ReactElement;
 }
 export interface KeepAliveAssist {
     beforeRouteLeave?: (scrollTop: number, state: any) => void;
-    scrollRestore?: () => number;
+    scrollRestore?: () => number | null;
     stateRestore?: () => any;
-    deleteCache?: (key: string) => void;
+    deleteCache?: () => void;
+    getKeepAlive?: (name?: string) => void;
 }
-declare const KeepAlive: ({ key, Component, maxLength, store, }: KeepAliveProps) => any;
+declare const KeepAlive: React.FC<KeepAliveProps>;
 export default KeepAlive;

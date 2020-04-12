@@ -9,7 +9,6 @@ const List: React.FC<ListProps> = ({
   beforeRouteLeave,
   scrollRestore,
   stateRestore,
-  deleteCache,
 }) => {
   const history = useHistory();
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -32,7 +31,6 @@ const List: React.FC<ListProps> = ({
           '33333333333333333',
           '44444444444444444',
           '55555555555555555',
-          '66666666666666666',
         ]
     );
     setTimeout(() => {

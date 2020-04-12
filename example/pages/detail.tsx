@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
 import '../styles.css';
 
-const Detail = ({ beforeRouteLeave }) => {
+export default function Detail() {
   const [home, setHome] = useState('');
   const history = useHistory();
   const { id } = useParams();
@@ -16,19 +16,16 @@ const Detail = ({ beforeRouteLeave }) => {
     setHome(url);
   }, []);
 
-  const goto = () => {
-    beforeRouteLeave();
-    history.push(`/detail2/${id}`);
+  const onBack = () => {
+    history.replace(home);
   };
 
   return (
     <div className="detail">
       detail: {id}
       <div>
-        <button onClick={goto}>detail2</button>
+        <button onClick={onBack}>返回</button>
       </div>
     </div>
   );
-};
-
-export default Detail;
+}
