@@ -4,10 +4,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const shouldUseSourceMap = false;
-
 const isEnvDevelopment = process.env.NODE_ENV === 'development';
 const isEnvProduction = process.env.NODE_ENV === 'production';
+
+const shouldUseSourceMap = isEnvDevelopment ? true : false;
 
 const resolvePath = (_path) => path.resolve(__dirname, _path);
 const paths = {
@@ -75,7 +75,7 @@ const config = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    isEnvProduction ? new CleanWebpackPlugin() : undefined,
     new HtmlWebpackPlugin({
       template: paths.appHtml,
       templateParameters: {
@@ -83,7 +83,7 @@ const config = {
       },
     }),
     new ForkTsCheckerWebpackPlugin(),
-  ],
+  ].filter(Boolean),
 };
 
 module.exports = config;

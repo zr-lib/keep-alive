@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
-import { KeepAliveAssist } from 'keep-alive';
+import { KeepAliveAssist } from 'keep-alive-comp';
 import '../styles.css';
 
 export interface ListProps extends KeepAliveAssist {}

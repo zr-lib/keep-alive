@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/zero9527/keep-alive#readme",
   "dependencies": {
+    "@loadable/component": "^5.12.0",
     "keep-alive-comp": "0.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.13.1",
