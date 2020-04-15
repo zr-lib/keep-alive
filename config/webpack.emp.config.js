@@ -18,6 +18,8 @@ const paths = {
   appHtml: resolvePath('../example/index.html'),
 };
 
+const homepage = require(resolvePath('../package.json')).homepage;
+
 const config = {
   mode: isEnvProduction ? 'production' : 'development',
   entry: paths.entry,
@@ -41,7 +43,7 @@ const config = {
         react: 'React',
         'react-dom': 'ReactDOM',
       }
-    : {},
+    : undefined,
   module: {
     rules: [
       {
@@ -80,6 +82,7 @@ const config = {
       template: paths.appHtml,
       templateParameters: {
         isEnvProduction,
+        homepage,
       },
     }),
     new ForkTsCheckerWebpackPlugin(),
