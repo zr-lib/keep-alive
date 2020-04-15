@@ -7,7 +7,7 @@ configure({ adapter: new Adapter() });
 
 const Child = (props) => <div className="child">ccccaaaa</div>;
 
-describe('============= keep-alive 正常使用测试 =============', () => {
+describe('============= keep-alive test =============', () => {
   const wrapper1 = shallow(
     <KeepAlive name="child">{(props) => <Child {...props} />}</KeepAlive>
   );
@@ -72,7 +72,7 @@ describe('============= keep-alive 正常使用测试 =============', () => {
     expect(state).toEqual(['1', '2']);
     const _wrapper = shallow(<KeepAlive name="child">{cache()}</KeepAlive>);
 
-    // 第一次
+    // 第二次
     renderSuccess(_wrapper);
     addPropsSuccess(_wrapper);
     propsValid(_wrapper);

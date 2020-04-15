@@ -1,13 +1,10 @@
-# React Component keep-alive
+# React 组件 keep-alive
+中文 | [English](./README.md)
 
-English | [中文](./README_zh.md)
+## 依赖
+React: 16.8+
 
-
-## dependencies
-React: 16.8.0+
-
-
-## Usage
+## 用法
 
 ```jsx
 <Route
@@ -30,10 +27,10 @@ React: 16.8.0+
 />
 ```
 
-
-## KeepAliveAssist 
+## 辅助函数
 
 ```jsx
+// 辅助函数
 export interface KeepAliveAssist {
   beforeRouteLeave?: (scrollTop: number, state: any) => void;
   scrollRestore?: () => number | null;
@@ -43,7 +40,6 @@ export interface KeepAliveAssist {
 }
 ```
 
-
-## componet example
+## 组件使用
 
 [list](./example/pages/list.tsx)
