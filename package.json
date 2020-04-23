@@ -1,6 +1,6 @@
 {
   "name": "keep-alive-comp",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React组件keep-alvie",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -30,14 +30,6 @@
     "url": "https://github.com/zero9527/keep-alive/issues"
   },
   "homepage": "https://github.com/zero9527/keep-alive#readme",
-  "dependencies": {
-    "@loadable/component": "^5.12.0",
-    "keep-alive-comp": "0.0.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.13.1",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2"
-  },
   "peerDependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.13.1",
@@ -51,6 +43,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@loadable/component": "^5.12.0",
     "@types/enzyme": "^3.10.5",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.23",
@@ -74,12 +67,17 @@
     "fork-ts-checker-webpack-plugin": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^25.3.0",
+    "keep-alive-comp": "0.0.3",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-flexbugs-fixes": "^4.2.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "style-loader": "^1.1.3",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
