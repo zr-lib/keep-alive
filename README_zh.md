@@ -68,4 +68,4 @@ export interface KeepAliveAssist {
 
 
 ## 组件使用
-[list](./example/pages/list.tsx)
+组件：[list](./example/pages/list.tsx)
