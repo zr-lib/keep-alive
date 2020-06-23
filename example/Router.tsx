@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import { HashRouter } from 'react-router-dom';
 import { lazy } from '@loadable/component';
 import KeepAlive from 'keep-alive-comp';
 

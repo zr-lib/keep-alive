@@ -15,6 +15,15 @@ npm i keep-alive-comp
 
 
 ## Usage
+optional "useStorage" param("sessionStorage"/"localStorage"): maintain cache after refresh("beforeRouteLeave" has been called)
+
+```jsx
+// example\index.tsx
+import configKeepAlive from 'keep-alive-comp';
+
+// optional
+configKeepAlive({ maxLength: 2, useStorage: 'sessionStorage' });
+```
 
 ```jsx
 // example\Router.tsx

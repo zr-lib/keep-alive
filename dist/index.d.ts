@@ -1,8 +1,6 @@
-import React from 'react';
+/// <reference types="react" />
 export interface KeepAliveProps {
     name: string;
-    store?: any;
-    maxLength?: number;
     children: (cacheProps: KeepAliveAssist) => React.ReactElement;
 }
 export interface KeepAliveAssist {
@@ -12,5 +10,15 @@ export interface KeepAliveAssist {
     deleteCache?: () => void;
     getKeepAlive?: () => void;
 }
+export interface CacheItem {
+    name: string;
+    state?: any;
+    scrollTop?: number;
+}
+/**
+ * 组件 keep-alive
+ * @param {*} name
+ * @param {*} children
+ */
 declare const KeepAlive: React.FC<KeepAliveProps>;
 export default KeepAlive;

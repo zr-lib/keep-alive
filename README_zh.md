@@ -13,6 +13,16 @@ npm i keep-alive-comp
 
 
 ## 用法
+可选 "useStorage" 参数（"sessionStorage"/"localStorage"），可以在刷新页面后，保持缓存（已调用"beforeRouteLeave"）
+
+```jsx
+// example\index.tsx
+import configKeepAlive from 'keep-alive-comp';
+
+// 可以不写
+configKeepAlive({ maxLength: 2, useStorage: 'sessionStorage' });
+```
+
 ```jsx
 // example\Router.tsx
 import React, { Suspense } from 'react';

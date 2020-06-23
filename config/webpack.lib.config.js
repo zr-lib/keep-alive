@@ -11,7 +11,7 @@ const shouldUseSourceMap = false;
 
 const resolvePath = (_path) => path.resolve(__dirname, _path);
 const paths = {
-  entry: resolvePath('../src/index.tsx'),
+  entry: resolvePath('../src/index.ts'),
   publicPath: '.',
   srcPath: resolvePath('../src'),
   outputPath: resolvePath('../dist'),
@@ -33,7 +33,7 @@ module.exports = {
     path: paths.outputPath,
     publicPath: paths.publicPath,
   },
-  resolve: { extensions: ['.css', '.js', 'tsx'] },
+  resolve: { extensions: ['.css', '.js', '.ts', '.tsx'] },
   externals: {
     react: {
       commonjs: 'react',

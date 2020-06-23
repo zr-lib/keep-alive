@@ -1,13 +1,22 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import KeepAlive from './index';
+import KeepAlive from '../src/index';
+import configKeepAliveTest from './configKeepAliveTest';
+import useKeepAliveCacheTest from './useKeepAliveCacheTest';
 
 configure({ adapter: new Adapter() });
 
 const Child = (props) => <div className="child">ccccaaaa</div>;
 
 describe('============= keep-alive test =============', () => {
+  configKeepAliveTest({
+    store: global,
+    maxLength: 2,
+    useStorage: 'sessionStorage',
+  });
+  useKeepAliveCacheTest('child');
+
   const wrapper1 = shallow(
     <KeepAlive name="child">{(props) => <Child {...props} />}</KeepAlive>
   );
@@ -66,16 +75,24 @@ describe('============= keep-alive test =============', () => {
     expect(scrollRestore()).toBe(10);
     expect(stateRestore()).toEqual(['1', '2']);
 
-    const { name, scrollTop, state, cache } = getKeepAlive();
+    const { name, scrollTop, state } = getKeepAlive();
     expect(name).toBe('child');
     expect(scrollTop).toBe(10);
     expect(state).toEqual(['1', '2']);
-    const _wrapper = shallow(<KeepAlive name="child">{cache()}</KeepAlive>);
 
     // 第二次
-    renderSuccess(_wrapper);
-    addPropsSuccess(_wrapper);
-    propsValid(_wrapper);
+    beforeRouteLeave(100, ['11', '22']);
+    expect(scrollRestore()).toBe(100);
+    expect(stateRestore()).toEqual(['11', '22']);
+
+    const {
+      name: name2,
+      scrollTop: scrollTop2,
+      state: state2,
+    } = getKeepAlive();
+    expect(name2).toBe('child');
+    expect(scrollTop2).toBe(100);
+    expect(state2).toEqual(['11', '22']);
 
     deleteCache();
     expect(getKeepAlive()).toBe(null);
