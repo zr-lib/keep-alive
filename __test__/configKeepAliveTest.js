@@ -6,8 +6,8 @@ function configKeepAliveTest(config) {
   it('-- configKeepAlive 测试 --', () => {
     expect(cacheName).toBe('__keep_alive_cache__');
     expect(store).toBe(global);
-    expect(maxLength).toBe(2);
-    expect(useStorage).toBe('sessionStorage');
+    expect(maxLength).toBe(config.maxLength);
+    expect(useStorage).toBe(config.useStorage);
   });
 }
 
