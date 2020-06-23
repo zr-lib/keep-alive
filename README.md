@@ -3,7 +3,7 @@
 English | [中文](./README_zh.md)
 
 
-## dependencies
+## Dependencies
 React: 16.8.0+
 
 
@@ -79,6 +79,6 @@ export interface KeepAliveAssist {
 ```
 
 
-## component example
+## Component Example
 
-[list](./example/pages/list.tsx)
+component: [list](./example/pages/list.tsx)
