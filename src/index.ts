@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import configKeepAlive from './configKeepAlive';
 import useKeepAliveCache from './useKeepAliveCache';
 
 export interface KeepAliveProps {
