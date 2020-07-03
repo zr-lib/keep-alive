@@ -17,6 +17,8 @@ npm i keep-alive-comp
 ## Usage
 optional "useStorage" param("sessionStorage"/"localStorage"): maintain cache after refresh("beforeRouteLeave" has been called)
 
+> if using `useStorage`, Components need to be used with `Suspense`
+
 ```jsx
 // example\index.tsx
 import configKeepAlive from 'keep-alive-comp';

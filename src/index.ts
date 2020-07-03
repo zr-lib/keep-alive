@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import configKeepAlive from './configKeepAlive';
 import useKeepAliveCache from './useKeepAliveCache';
 
 export interface KeepAliveProps {
@@ -13,7 +12,7 @@ export interface KeepAliveAssist {
   scrollRestore?: () => number | null;
   stateRestore?: () => any;
   deleteCache?: () => void;
-  getKeepAlive?: () => void;
+  getKeepAlive?: () => CacheItem | null;
 }
 
 export interface CacheItem {

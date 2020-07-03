@@ -15,6 +15,8 @@ npm i keep-alive-comp
 ## 用法
 可选 "useStorage" 参数（"sessionStorage"/"localStorage"），可以在刷新页面后，保持缓存（已调用"beforeRouteLeave"）
 
+> 如果使用 `useStorage`，组件需要与 `Suspense` 配合使用
+
 ```jsx
 // example\index.tsx
 import configKeepAlive from 'keep-alive-comp';
