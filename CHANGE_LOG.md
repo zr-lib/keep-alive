@@ -9,3 +9,16 @@
 
 ## v0.1.3
 - fix: getKeepAlive types
+
+## 0.1.4
+- configKeepAlive `import` from change: 
+
+  **old:**
+  ```js
+    import configKeepAlive from 'keep-alive-comp/dist/configKeepAlive';
+  ```
+
+  **new:**
+  ```js 
+    import { configKeepAlive } from 'keep-alive-comp';
+  ```

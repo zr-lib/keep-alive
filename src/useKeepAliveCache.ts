@@ -1,17 +1,6 @@
 import { useEffect } from 'react';
-import { CacheItem } from '.';
+import { CacheItem, UpdateStorageCache, UpdateCache } from './index.d';
 import configKeepAlive from './configKeepAlive';
-
-type UpdateStorageCache = {
-  _store: any;
-  _cacheName: string;
-};
-
-export type UpdateCache = {
-  name: string;
-  state: any;
-  scrollTop: number;
-};
 
 // 缓存
 const useKeepAliveCache = () => {

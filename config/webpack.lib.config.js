@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BannerPlugin = require('webpack').BannerPlugin;
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const postcssNormalize = require('postcss-normalize');
@@ -23,13 +24,16 @@ const package = fs.readFileSync(resolvePath('../package.json'), {
 const { version } = JSON.parse(package);
 const banner = `keep-alive\nversion: ${version}\nbuild: ${util.getTime()}`;
 
+// TODO：
+// 1、copy src/index.d.ts
+
 module.exports = {
   mode: 'production',
   entry: paths.entry,
   output: {
     filename: 'index.js',
-    library: 'PositionSticky',
-    libraryTarget: 'commonjs2',
+    library: 'KeepAlive',
+    libraryTarget: 'umd',
     path: paths.outputPath,
     publicPath: paths.publicPath,
   },
@@ -91,5 +95,13 @@ module.exports = {
     new CleanWebpackPlugin(),
     new BannerPlugin(banner),
     new ForkTsCheckerWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolvePath('../src/index.d.ts'),
+          to: resolvePath('../dist'),
+        },
+      ],
+    }),
   ],
 };

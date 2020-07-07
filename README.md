@@ -15,7 +15,7 @@ npm i keep-alive-comp
 
 
 ## Usage
-optional "useStorage" param("sessionStorage"/"localStorage"): maintain cache after refresh("beforeRouteLeave" has been called)
+optional `useStorage` param("sessionStorage"/"localStorage"): maintain cache after refresh("beforeRouteLeave" has been called)
 
 > if using `useStorage`, Components need to be used with `Suspense`
 

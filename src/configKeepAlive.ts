@@ -1,8 +1,4 @@
-export interface ConfigProps {
-  store: any;
-  maxLength: number;
-  useStorage?: 'sessionStorage' | 'localStorage';
-}
+import { ConfigProps } from './index.d';
 
 const CACHE_NAME = `__keep_alive_cache__`;
 let DEFAULT_CONFIG: ConfigProps = {
@@ -12,7 +8,7 @@ let DEFAULT_CONFIG: ConfigProps = {
 };
 
 // 配置
-const configKeepAlive = (props: Partial<ConfigProps> = {}) => {
+const configKeepAlive = (props: Partial<ConfigProps> = DEFAULT_CONFIG) => {
   const init = () => {
     DEFAULT_CONFIG = { ...DEFAULT_CONFIG, ...props };
     const { store, maxLength, useStorage } = DEFAULT_CONFIG;
