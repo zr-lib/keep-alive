@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 // import { configKeepAlive } from 'keep-alive-comp';
 
-// console.log(configKeepAlive);
-
 // optional/可以不写
 // configKeepAlive({ maxLength: 2, useStorage: 'sessionStorage' });
 

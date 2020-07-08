@@ -19,7 +19,7 @@ npm i keep-alive-comp
 
 ```jsx
 // example\index.tsx
-import configKeepAlive from 'keep-alive-comp';
+import { configKeepAlive } from 'keep-alive-comp';
 
 // 可以不写
 configKeepAlive({ maxLength: 2, useStorage: 'sessionStorage' });

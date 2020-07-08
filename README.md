@@ -21,7 +21,7 @@ optional `useStorage` param("sessionStorage"/"localStorage"): maintain cache aft
 
 ```jsx
 // example\index.tsx
-import configKeepAlive from 'keep-alive-comp';
+import { configKeepAlive } from 'keep-alive-comp';
 
 // optional
 configKeepAlive({ maxLength: 2, useStorage: 'sessionStorage' });
