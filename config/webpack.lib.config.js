@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BannerPlugin = require('webpack').BannerPlugin;
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const postcssNormalize = require('postcss-normalize');
+const package = require('../package.json');
 
 const util = require('./util');
 
@@ -18,11 +19,9 @@ const paths = {
   outputPath: resolvePath('../dist'),
 };
 
-const package = fs.readFileSync(resolvePath('../package.json'), {
-  encoding: 'utf-8',
-});
-const { version } = JSON.parse(package);
-const banner = `keep-alive\nversion: ${version}\nbuild: ${util.getTime()}`;
+const banner = `keep-alive\nversion: ${
+  package.version
+}\nbuild: ${util.getTime()}`;
 
 // TODO：
 // 1、copy src/index.d.ts

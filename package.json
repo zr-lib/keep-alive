@@ -1,7 +1,7 @@
 {
   "name": "keep-alive-comp",
   "version": "0.1.4",
-  "description": "React组件keep-alvie",
+  "description": "React Component keep-alive",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
