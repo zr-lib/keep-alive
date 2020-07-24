@@ -3,7 +3,7 @@ import useKeepAliveCache from '../src/useKeepAliveCache';
 import configKeepAlive from '../src/configKeepAlive';
 
 function useKeepAliveCacheTest(name) {
-  it('-- useStorage: undefined 测试 --', () => {
+  it('--- useStorage: undefined 测试 ---', () => {
     const useStorageValue = undefined;
     const configKeepAliveProps = renderHook(() =>
       configKeepAlive({ store: global, useStorage: useStorageValue })

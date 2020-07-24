@@ -2,7 +2,7 @@
 module.exports = {
   modulePaths: ['<rootDir>/src/'],
   moduleNameMapper: {
-    '.(css|less)$': '<rootDir>/__test__/NullModule.js',
+    '.(css|less)$': '<rootDir>/__test__/_nullModule.js',
   },
   collectCoverage: true,
   coverageDirectory: '<rootDir>/src/',

@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 
 const Child = (props) => <div className="child">ccccaaaa</div>;
 
-describe('============= keep-alive test =============', () => {
+describe('[=== keep-alive test ===]', () => {
   configKeepAliveTest({
     store: global,
     maxLength: 2,
@@ -26,16 +26,16 @@ describe('============= keep-alive test =============', () => {
     </KeepAlive>
   );
 
-  it('-- children 非函数不渲染 --', () => {
+  it('--- children 非函数不渲染 ---', () => {
     expect(typeof wrapper2.children() === 'function').toBe(false);
     expect(wrapper2.html()).toBe(null);
   });
 
   // 第一次
-  it('-- 成功渲染 --', () => renderSuccess(wrapper1));
-  it('-- 成功附加属性 KeepAliveAssist 到子组件 children --', () =>
+  it('--- 成功渲染 ---', () => renderSuccess(wrapper1));
+  it('--- 成功附加属性 KeepAliveAssist 到子组件 children ---', () =>
     addPropsSuccess(wrapper1));
-  it('-- 子组件, 附加属性 KeepAliveAssist 返回有效值 --', () => propsValid());
+  it('--- 子组件, 附加属性 KeepAliveAssist 返回有效值 ---', () => propsValid());
 
   // 成功渲染
   const renderSuccess = (_wrapper) =>
