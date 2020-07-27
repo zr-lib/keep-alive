@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BannerPlugin = require('webpack').BannerPlugin;
@@ -22,9 +21,6 @@ const paths = {
 const banner = `keep-alive\nversion: ${
   package.version
 }\nbuild: ${util.getTime()}`;
-
-// TODO：
-// 1、copy src/index.d.ts
 
 module.exports = {
   mode: 'production',
