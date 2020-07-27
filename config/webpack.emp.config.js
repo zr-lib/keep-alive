@@ -3,6 +3,7 @@ const postcssNormalize = require('postcss-normalize');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const package = require('../package.json');
 
 const isEnvDevelopment = process.env.NODE_ENV === 'development';
 const isEnvProduction = process.env.NODE_ENV === 'production';
@@ -18,7 +19,7 @@ const paths = {
   appHtml: resolvePath('../example/index.html'),
 };
 
-const homepage = require(resolvePath('../package.json')).homepage;
+const { homepage } = package;
 
 const config = {
   mode: isEnvProduction ? 'production' : 'development',

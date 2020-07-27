@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
-import '../styles.css';
 
 export default function Detail() {
   const [home, setHome] = useState('');
@@ -22,10 +21,10 @@ export default function Detail() {
 
   return (
     <div className="detail">
-      detail: {id}
-      <div>
+      <p>detail: {id}</p>
+      <p>
         <button onClick={onBack}>返回</button>
-      </div>
+      </p>
     </div>
   );
 }

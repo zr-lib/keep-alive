@@ -1,0 +1,19 @@
+.list {
+  max-width: 500px;
+  height: 500px;
+  margin: auto;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.item {
+  padding: 100px 0;
+  display: block;
+  background: #ffc107;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.item-2n {
+  background: #00bcd4;
+}

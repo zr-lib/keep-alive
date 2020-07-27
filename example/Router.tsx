@@ -1,7 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router';
 import { HashRouter } from 'react-router-dom';
-import { lazy } from '@loadable/component';
 import KeepAlive from 'keep-alive-comp';
 
 const List = lazy(() => import('./pages/list'));

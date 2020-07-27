@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import { KeepAliveAssist } from 'keep-alive-comp';
-import '../styles.css';
+import './styles.css';
 
 export interface ListProps extends KeepAliveAssist {}
 
@@ -24,14 +24,7 @@ const List: React.FC<ListProps> = ({
     const _state = stateRestore();
 
     updateList(
-      () =>
-        _state?.list || [
-          '11111111111111111',
-          '22222222222222222',
-          '33333333333333333',
-          '44444444444444444',
-          '55555555555555555',
-        ]
+      () => _state?.list || ['111111', '222222', '333333', '444444', '555555']
     );
     setTimeout(() => {
       listRef.current.scrollTop = _scrollTop;
@@ -48,22 +41,26 @@ const List: React.FC<ListProps> = ({
       const temp = new Array(5)
         .fill('')
         .map((i, index) =>
-          new Array(17).fill(`${list.length + index + 1}`).join('')
+          new Array(6).fill(`${list.length + index + 1}`).join('')
         );
       updateList((prev) => [...prev, ...temp]);
     }
   };
 
-  const toDetail = (i) => {
+  const toDetail = (item) => {
     beforeRouteLeave(scrollTop, { list });
-    history.push(`/detail/${i}`);
+    history.push(`/detail/${item}`);
   };
 
   return (
     <div className="list" ref={listRef} onScroll={onScroll}>
-      {list.map((i) => (
-        <div className="item" key={i} onClick={() => toDetail(i)}>
-          {i}
+      {list.map((item, index) => (
+        <div
+          className={`item ${index % 2 === 0 ? 'item-2n' : ''}`}
+          key={item}
+          onClick={() => toDetail(item)}
+        >
+          {item}
         </div>
       ))}
     </div>

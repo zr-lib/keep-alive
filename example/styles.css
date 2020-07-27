@@ -2,17 +2,3 @@
   font-family: sans-serif;
   text-align: center;
 }
-
-.list {
-  height: 500px;
-  border: 1px solid #ccc;
-  overflow-y: auto;
-}
-
-.item {
-  padding: 100px 0;
-  display: block;
-}
-.item:hover {
-  color: #2196f3;
-}
